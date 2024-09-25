@@ -39,7 +39,7 @@ import Data.Functor.Classes
 
 import Control.Applicative
 import Data.Functor.Constant
-#if !(MIN_VERSION_base(4,8,0))
+#if !(MIN_VERSION_base(4,8,0)) || defined(__MHS__)
 import Data.Foldable (Foldable(foldMap))
 import Data.Monoid (Monoid(..))
 import Data.Traversable (Traversable(traverse))
@@ -73,7 +73,7 @@ instance (Ord1 f) => Ord1 (Lift f) where
 
 instance (Read1 f) => Read1 (Lift f) where
     liftReadsPrec rp rl = readsData $
-        readsUnaryWith rp "Pure" Pure `mappend`
+        readsUnaryWith rp "Pure" Pure <>
         readsUnaryWith (liftReadsPrec rp rl) "Other" Other
 
 instance (Show1 f) => Show1 (Lift f) where

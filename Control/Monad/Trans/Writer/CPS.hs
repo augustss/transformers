@@ -62,6 +62,10 @@ import Control.Monad.Trans.Class
 import Control.Monad.Signatures
 import Data.Functor.Identity
 
+#if !(MIN_VERSION_base(4,8,0)) || defined(__MHS__)
+import Data.Traversable (Traversable(traverse))
+#endif
+
 #if !(MIN_VERSION_base(4,8,0))
 import Data.Monoid
 #endif
