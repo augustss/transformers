@@ -62,9 +62,6 @@ import qualified Control.Monad.Fail as Fail
 #if __GLASGOW_HASKELL__ >= 704
 import GHC.Generics
 #endif
-#if defined(__MHS__)
-import Data.Foldable
-#endif
 
 {- |
 Continuation monad.

@@ -67,9 +67,6 @@ import Control.Monad.Zip (MonadZip(mzipWith))
 #if (MIN_VERSION_base(4,2,0)) && !(MIN_VERSION_base(4,8,0))
 import Data.Functor ((<$))
 #endif
-#if defined(__MHS__)
-import Data.Traversable
-#endif
 #if __GLASGOW_HASKELL__ >= 704
 import GHC.Generics
 #endif
